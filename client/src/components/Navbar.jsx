@@ -79,7 +79,7 @@ const Navbar = () => {
                     <Link to="profile">Edit Profile</Link>{" "}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={logoutHandler}>
-                    Log out
+                    Logout
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 {user?.role === "instructor" && (
