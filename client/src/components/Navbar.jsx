@@ -50,7 +50,7 @@ const Navbar = () => {
           <School size={"30"} />
           <Link to="/">
             <h1 className="hidden md:block font-extrabold text-2xl">
-              E-Learning
+              GROWTH TRADERS
             </h1>
           </Link>
         </div>
@@ -79,7 +79,7 @@ const Navbar = () => {
                     <Link to="profile">Edit Profile</Link>{" "}
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={logoutHandler}>
-                    Logout
+                    Log out
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 {user?.role === "instructor" && (
@@ -135,7 +135,7 @@ const MobileNavbar = ({user}) => {
         <nav className="flex flex-col space-y-4">
           <Link to="/my-learning">My Learning</Link>
           <Link to="/profile">Edit Profile</Link>
-          <p>Log Out</p>
+          <p>Log out</p>
         </nav>
         {user?.role === "instructor" && (
           <SheetFooter>
