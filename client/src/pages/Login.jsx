@@ -25,6 +25,7 @@ const Login = () => {
     name: "",
     email: "",
     password: "",
+    role: "student",
   });
   const [loginInput, setLoginInput] = useState({ email: "", password: "" });
 
@@ -109,7 +110,7 @@ const Login = () => {
                   name="name"
                   value={signupInput.name}
                   onChange={(e) => changeInputHandler(e, "signup")}
-                  placeholder="Eg. patel"
+                  placeholder=""
                   required="true"
                 />
               </div>
@@ -120,7 +121,7 @@ const Login = () => {
                   name="email"
                   value={signupInput.email}
                   onChange={(e) => changeInputHandler(e, "signup")}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder=""
                   required="true"
                 />
               </div>
@@ -131,10 +132,24 @@ const Login = () => {
                   name="password"
                   value={signupInput.password}
                   onChange={(e) => changeInputHandler(e, "signup")}
-                  placeholder="Eg. xyz"
+                  placeholder=""
                   required="true"
                 />
               </div>
+              <div className="space-y-1">
+                <Label htmlFor="role">Role</Label>
+                <select
+                  name="role"
+                  value={signupInput.role}
+                  onChange={(e) => changeInputHandler(e, "signup")}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                >
+                  <option value="student">Student</option>
+                  <option value="instructor">Instructor</option>
+                </select>
+              </div>
+
             </CardContent>
             <CardFooter>
               <Button
@@ -169,7 +184,7 @@ const Login = () => {
                   name="email"
                   value={loginInput.email}
                   onChange={(e) => changeInputHandler(e, "login")}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder=""
                   required="true"
                 />
               </div>
@@ -180,7 +195,7 @@ const Login = () => {
                   name="password"
                   value={loginInput.password}
                   onChange={(e) => changeInputHandler(e, "login")}
-                  placeholder="Eg. xyz"
+                  placeholder=""
                   required="true"
                 />
               </div>
