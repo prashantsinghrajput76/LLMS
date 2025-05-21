@@ -8,6 +8,7 @@ import courseRoute from "./routes/course.route.js";
 import mediaRoute from "./routes/media.route.js";
 import purchaseRoute from "./routes/purchaseCourse.route.js";
 import courseProgressRoute from "./routes/courseProgress.route.js";
+import path from "path";
 
 dotenv.config({});
 
@@ -15,6 +16,8 @@ dotenv.config({});
 connectDB();
 const app = express();
 
+
+const __dirname = path.resolve();
 const PORT = process.env.PORT || 3000;
 
 // default middleware
@@ -33,6 +36,14 @@ app.use("/api/v1/course", courseRoute);
 app.use("/api/v1/purchase", purchaseRoute);
 app.use("/api/v1/progress", courseProgressRoute);
  
+app.use (express.static(path.join(__dirname, "/client/dist")));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"), (err) => {
+        if (err) {
+            res.status(err.status).end();
+        }
+    });
+});
  
 app.listen(PORT, () => {
     console.log(`Server listen at port ${PORT}`);
